@@ -34,7 +34,7 @@ public class PlanetaService {
 
     public Optional<Planeta> buscaPlanetaPorNome(String nome) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("nome").regex(nome, "i"));
+        query.addCriteria(Criteria.where("nome").regex("^" + nome + "$", "i"));
         Planeta planeta = mongoTemplate.findOne(query, Planeta.class);
         return Optional.ofNullable(planeta);
     }
