@@ -41,7 +41,7 @@ public class SwapiController {
     public ResponseEntity<List<Planeta>> importaPlanetas() {
 
         if (!importacaoLiberada)
-            return ResponseEntity.status(401).body(null);
+            return ResponseEntity.status(403).body(null);
 
         Root root = apiService.buscaTodosPlanetas();
 
