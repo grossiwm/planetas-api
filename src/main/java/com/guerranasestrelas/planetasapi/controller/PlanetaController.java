@@ -106,6 +106,6 @@ public class PlanetaController {
 
         planetaService.removePlaneta(planetaOp.get());
 
-        return ResponseEntity.status(204).body(planetaOp.get());
+        return ResponseEntity.status(204).body(null);
     }
 }
