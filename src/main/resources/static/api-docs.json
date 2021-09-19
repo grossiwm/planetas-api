@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "877b582a-42f3-4649-8b0c-1483dffe5795",
+		"name": "PlanetasApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adiconar Planeta no Banco de Dados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Neoplaneta\",\r\n    \"clima\": \"tropical\",\r\n    \"terreno\": \"florestas\",\r\n    \"numeroAparicoes\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/planetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Adiconar Planeta no Banco de Dados",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Neoplaneta\",\r\n    \"clima\": \"tropical\",\r\n    \"terreno\": \"florestas\",\r\n    \"numeroAparicoes\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/planetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:47:04 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6147bde83da14049ef71140a\",\n    \"nome\": \"Neoplaneta\",\n    \"clima\": \"tropical\",\n    \"terreno\": \"florestas\",\n    \"numeroAparicoes\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar Planetas do Banco de Dados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/planetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Listar Planetas do Banco de Dados",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/planetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:47:26 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"6147a7386231537b40db7d54\",\n        \"nome\": \"Orbtitron\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"montanhas\",\n        \"numeroAparicoes\": 2\n    },\n    {\n        \"id\": \"6147ab504dc41d7205b9c860\",\n        \"nome\": \"Ciburial\",\n        \"clima\": \"tropical\",\n        \"terreno\": \"selva\",\n        \"numeroAparicoes\": 5\n    },\n    {\n        \"id\": \"6147b26d81aa8e52bebf86a7\",\n        \"nome\": \"Mexitin\",\n        \"clima\": \"tropical\",\n        \"terreno\": \"florestas\",\n        \"numeroAparicoes\": 2\n    },\n    {\n        \"id\": \"6147bde83da14049ef71140a\",\n        \"nome\": \"Neoplaneta\",\n        \"clima\": \"tropical\",\n        \"terreno\": \"florestas\",\n        \"numeroAparicoes\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Buscar Planeta por Nome do Banco de Dados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/planetas/por-nome/mexitin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas",
+						"por-nome",
+						"mexitin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Buscar Planeta por Nome do Banco de Dados",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/planetas/por-nome/mexitin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas",
+								"por-nome",
+								"mexitin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:47:38 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6147b26d81aa8e52bebf86a7\",\n    \"nome\": \"Mexitin\",\n    \"clima\": \"tropical\",\n    \"terreno\": \"florestas\",\n    \"numeroAparicoes\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Buscar Planeta Planeta por Id do Banco de Dados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/planetas/6147a7386231537b40db7d54",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas",
+						"6147a7386231537b40db7d54"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Buscar Planeta Planeta por Id do Banco de Dados",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/planetas/6147a7386231537b40db7d54",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas",
+								"6147a7386231537b40db7d54"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:50:17 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6147a7386231537b40db7d54\",\n    \"nome\": \"Orbtitron\",\n    \"clima\": \"temperado\",\n    \"terreno\": \"montanhas\",\n    \"numeroAparicoes\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Remover Planeta do Banco de Dados",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/planetas/6147bde83da14049ef71140a",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas",
+						"6147bde83da14049ef71140a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Remover Planeta do Banco de Dados",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/planetas/6147bde83da14049ef71140a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas",
+								"6147bde83da14049ef71140a"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:48:51 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Buscar Planetas da API do Star Wars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/planetas/da-swapi",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planetas",
+						"da-swapi"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Buscar Planetas da API do Star Wars",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/planetas/da-swapi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"planetas",
+								"da-swapi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Sep 2021 22:48:59 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"nome\": \"Tatooine\",\n        \"clima\": \"árido\",\n        \"terreno\": \"deserto\",\n        \"numeroAparicoes\": 5\n    },\n    {\n        \"nome\": \"Alderaan\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"pastagens, montanhas\",\n        \"numeroAparicoes\": 2\n    },\n    {\n        \"nome\": \"Yavin IV\",\n        \"clima\": \"temperado, tropical\",\n        \"terreno\": \"selva, floresta tropical\",\n        \"numeroAparicoes\": 1\n    },\n    {\n        \"nome\": \"Hoth\",\n        \"clima\": \"congelado\",\n        \"terreno\": \"tundra, cavernas de gelo, cordilheiras\",\n        \"numeroAparicoes\": 1\n    },\n    {\n        \"nome\": \"Dagobah\",\n        \"clima\": \"turvo\",\n        \"terreno\": \"pântano, selvas\",\n        \"numeroAparicoes\": 3\n    },\n    {\n        \"nome\": \"Bespin\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"planeta gasoso\",\n        \"numeroAparicoes\": 1\n    },\n    {\n        \"nome\": \"Endor\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"florestas, montanhas, lagos\",\n        \"numeroAparicoes\": 1\n    },\n    {\n        \"nome\": \"Naboo\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"colinas gramadas, pântanos, florestas, montanhas\",\n        \"numeroAparicoes\": 4\n    },\n    {\n        \"nome\": \"Coruscant\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"paisagem urbana, montanhas\",\n        \"numeroAparicoes\": 4\n    },\n    {\n        \"nome\": \"Kamino\",\n        \"clima\": \"temperado\",\n        \"terreno\": \"oceano\",\n        \"numeroAparicoes\": 1\n    }\n]"
+				}
+			]
+		}
+	]
+}
