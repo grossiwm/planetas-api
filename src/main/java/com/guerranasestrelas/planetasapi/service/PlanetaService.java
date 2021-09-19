@@ -24,10 +24,6 @@ public class PlanetaService {
         planetaRepository.deleteAll();
     }
 
-    public List<Planeta> salvaPlanetas(List<Planeta> planetas) {
-        return planetaRepository.saveAll(planetas);
-    }
-
     public List<Planeta> listaPlanetas() {
         return planetaRepository.findAll();
     }

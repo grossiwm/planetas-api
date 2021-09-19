@@ -36,4 +36,16 @@ public class SwapiClient {
             return null;
         }
     }
+
+    public List<String> buscaTiposDeTerreno() {
+        try {
+            ResponseEntity<Root> response = restTemplate.getForEntity("https://swapi.dev/api/planets", Root.class);
+            Root root = response.getBody();
+            assert root != null;
+            return root.getResults().stream().map(r -> r.terrain).distinct().collect(Collectors.toList());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

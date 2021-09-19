@@ -1,11 +1,8 @@
 package com.guerranasestrelas.planetasapi.dto;
 
-import lombok.Data;
-
 import java.util.Date;
 import java.util.List;
 
-@Data
 public class Result {
     public String name;
     public String rotation_period;

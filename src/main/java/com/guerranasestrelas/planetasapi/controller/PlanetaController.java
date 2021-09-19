@@ -1,9 +1,13 @@
 package com.guerranasestrelas.planetasapi.controller;
 
+import com.guerranasestrelas.planetasapi.client.SwapiClient;
 import com.guerranasestrelas.planetasapi.dto.Erro;
+import com.guerranasestrelas.planetasapi.dto.PlanetaDTO;
+import com.guerranasestrelas.planetasapi.dto.Root;
 import com.guerranasestrelas.planetasapi.model.Planeta;
 import com.guerranasestrelas.planetasapi.service.PlanetaService;
 import com.guerranasestrelas.planetasapi.utils.ErrorUtils;
+import com.guerranasestrelas.planetasapi.utils.PlanetasUtils;
 import com.guerranasestrelas.planetasapi.validator.PlanetaValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +26,21 @@ public class PlanetaController {
     private PlanetaService planetaService;
 
     @Autowired
+    private SwapiClient swapiClient;
+
+    @Autowired
     private PlanetaValidator planetaValidator;
+
+    @Autowired
+    private PlanetasUtils planetasUtils;
 
     @Autowired
     private ErrorUtils errorUtils;
 
     @GetMapping
     public ResponseEntity<Object> listarPlanetas() {
-        return ResponseEntity.status(200).body(planetaService.listaPlanetas());
+        List<Planeta> planetas = planetaService.listaPlanetas();
+        return ResponseEntity.status(200).body(planetas);
     }
 
     @PostMapping
@@ -107,5 +118,17 @@ public class PlanetaController {
         planetaService.removePlaneta(planetaOp.get());
 
         return ResponseEntity.status(204).body(null);
+    }
+
+    @GetMapping("/da-swapi")
+    public ResponseEntity<Object> buscaPlanetasDaApi() {
+        Root root = swapiClient.buscaTodosPlanetas();
+
+        List<PlanetaDTO> planetas = root.getResults().stream()
+                .map(result ->
+                        new PlanetaDTO(result.name, planetasUtils.traduzClima(result.climate), planetasUtils.traduzTerreno(result.terrain), result.films.size()))
+                .collect(Collectors.toList());
+
+        return ResponseEntity.status(200).body(planetas);
     }
 }
