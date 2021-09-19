@@ -1,9 +1,10 @@
 # Planetas-Api
 
-Uma aplicação dedicada aos Planetas de Star Wars. Existe uma versão [demo](https://planetasapi.herokuapp.com/api-docs.html) rodando desta aplicação.
+Esta é uma aplicação dedicada aos Planetas de Star Wars. Existe uma versão [demo](https://planetasapi.herokuapp.com/api-docs.html) rodando.
+Caso queira testar utilizando Postman disponibizei esta [collection](https://planetasapi.herokuapp.com/api-docs.json). 
 Para rodar este projeto localmente adicione uma variável de ambiente DB_SOURCE com a url de seu banco [MongoDB](https://www.mongodb.com).
 
-# Documentação
+# Documentação da API
 
 ## Indices
 
